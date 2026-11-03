@@ -1,0 +1,126 @@
+:root {
+    --primary-blue: #1D4ED8;
+    --bright-blue: #3B82F6;
+    --light-blue: #DBEAFE;
+    --background-blue: #EFF6FF;
+    --white: #FFFFFF;
+    --dark: #111827;
+    --border-color: #CBD5E1;
+}
+
+h1 {
+
+    justify-self: center;
+}
+
+
+.book_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--background-blue);
+}
+
+.book_item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--light-blue);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.08);
+    color: var(--dark);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book_item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(29, 78, 216, 0.15);
+}
+
+.book_item span {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.book_item span:first-child {
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--white);
+    border: 1px dashed var(--bright-blue);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.create-container {
+    max-width: 550px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border: 1px solid var(--light-blue);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.08);
+}
+
+.create-container h2 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.create-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create-container label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.create-container input,  .create-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+    color: var(--dark);
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.create-container button {
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.create-container button:hover {
+    background-color: var(--bright-blue);
+}
+
+@media (max-width: 480px) {
+    .create-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
