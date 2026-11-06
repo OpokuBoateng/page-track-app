@@ -32,6 +32,7 @@ $stmt = $conn->query($sql);
                         <span> <?php echo "Author: "  . $books["author"]; ?> </span> <br>
                         <span> <?php echo "Status: ". $books["status"]; ?> </span> <br>
                         <span> <?php echo "Current Page: " . $books["current_page"]; ?> </span> <br>
+                        <a href="edit.php?id=<?php echo $books["id"]; ?>">Edit</a>
                     </div>
                 <?php } ?>
 
