@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Edit Books</title>
 </head>
 <body>
@@ -81,27 +82,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
      ?>
 
      <div class="edit-container">
+        <h2>Edit</h2>
         <form action=""  method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="name" value="<?php echo $books["title"]; ?>" required >
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="name" value="<?php echo $books["title"]; ?>" required >
 
-        <label for="author">Author:</label>
-        <input type="text" name="author"  id="author" value="<?php echo $books["author"]; ?>" required>
+            <label for="author">Author:</label>
+            <input type="text" name="author"  id="author" value="<?php echo $books["author"]; ?>" required>
 
-        <label for="status">Status:</label>
-        <select name="status" id="status" required>
-            <?php foreach ($statusOptions as $status) : ?>
-                <option value="<?php echo $books["status"]; ?>"
-                <?php if ($books["status"] === $status) {echo "selected";}?>
-                ><?php  echo $status; ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
+            <label for="status">Status:</label>
+            <select name="status" id="status" required>
+                <?php foreach ($statusOptions as $status) : ?>
+                    <option value="<?php echo $books["status"]; ?>"
+                    <?php if ($books["status"] === $status) {echo "selected";}?>
+                    ><?php  echo $status; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
 
-        <label for="current_page">Current Page:</label>
-        <input type="number" name="current_page" id="current_page"   value="<?php echo $books["current_page"]; ?>">
-        <button type="submit">Edit</button>
-
+            <label for="current_page">Current Page:</label>
+            <input type="number" name="current_page" id="current_page"   value="<?php echo $books["current_page"]; ?>">
+            <button type="submit">Edit</button>
         </form>
      </div>
 </body>

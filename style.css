@@ -59,7 +59,7 @@ h1 {
     font-size: 16px;
 }
 
-.create-container {
+.create-container, .edit-container {
     max-width: 550px;
     width: 90%;
     margin: 30px auto;
@@ -70,38 +70,51 @@ h1 {
     box-shadow: 0 4px 12px rgba(29, 78, 216, 0.08);
 }
 
-.create-container h2 {
+.create-container h2, .edit-container h2 {
     color: var(--primary-blue);
     text-align: center;
     margin-bottom: 25px;
 }
 
-.create-container form {
+.create-container form,  .edit-container form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.create-container label {
+.create-container label, .edit-container label {
     display: block;
     margin-bottom: 6px;
     color: var(--dark);
     font-weight: 600;
 }
 
-.create-container input,  .create-container select {
+.create-container input,  .create-container select, .edit-container input, .edit-container select {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
     background-color: var(--white);
     color: var(--dark);
+    border-radius: 6px;
     font-size: 15px;
     outline: none;
     box-sizing: border-box;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.create-container button {
+.create-container input:focus .create-container select:focus {
+    outline: none;
+    border-color: var(--bright-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.edit-container input:focus .edit-container select:focus {
+    outline: none;
+    border-color: var(--bright-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.create-container button,  .edit-container button {
     padding: 12px;
     margin-top: 10px;
     border: none;
@@ -111,15 +124,16 @@ h1 {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
 }
 
-.create-container button:hover {
+.create-container button:hover, .edit-container button:hover {
     background-color: var(--bright-blue);
 }
 
 @media (max-width: 480px) {
-    .create-container {
+    .create-container, .edit-container {
+        width: 95%;
         padding: 20px;
         margin: 20px auto;
     }

@@ -20,7 +20,7 @@ $stmt = $conn->query($sql);
     <title>Book</title>
 </head>
 <body>
-    <h1>Books  in Oven</h1>
+    <h1>Books  in the Oven</h1>
     <p><a href="create.php" title="Add a book">Add a book</a></p>
     <?php if($stmt->num_rows > 0) {?>
         <div class="book_container">
