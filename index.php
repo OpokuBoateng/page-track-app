@@ -4,10 +4,7 @@ require_once "config/database.php";
 $sql = "SELECT * FROM books";
 
 $stmt = $conn->query($sql);
-
-
-
-
+// $books = $stmt->fetch_assoc();
 
 ?>
 
@@ -33,17 +30,28 @@ $stmt = $conn->query($sql);
                         <span> <?php echo "Status: ". $books["status"]; ?> </span> <br>
                         <span> <?php echo "Current Page: " . $books["current_page"]; ?> </span> <br>
                         <a href="edit.php?id=<?php echo $books["id"]; ?>">Edit</a>
+                        <form
+                             action="delete.php"
+                             method="POST"
+                             onsubmit="return confirm('Are you sure you want to delete this book?')"
+                            >
+                            <input type="number" value="<?php echo $books["id"] ?>" name="id" id="id" hidden>
+                            <button type="submit">Delete</button>
+                        </form>
                     </div>
                 <?php } ?>
 
 
+
         </div>
+
     <?php } else { ?>
         <div class="empty-message">
-            <p>You haven't added any books yet.</p>
+            <p> <?php echo "You haven't added any books yet. Books tha you add will appear here" ?></p>
         </div>
 
 
     <?php }  ?>
+
 </body>
 </html>
